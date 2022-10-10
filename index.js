@@ -100,11 +100,28 @@ Write a function called dice; it should randomize an integer number between 1 an
 
 */
 
+/*function dice() {
+  const side = Math.floor(Math.random() * 6 + 1);
+  return side;
+}
+
+dice();*/
+
 /* EXERCISE 2
 
 Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.
 
 */
+
+/*function whoIsBigger(int1, int2) {
+  if (int1 > int2) {
+    console.log(int1 + " is larger than " + int2);
+  } else {
+    console.log(int2 + " is larger than " + int1);
+  }
+}
+
+whoIsBigger(20, 600);*/
 
 /* EXERCISE 3
 
@@ -114,6 +131,15 @@ Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 
 */
 
+//Please note! I do understand the difference between console.log and return - but in this environment, I am looking for results.
+
+/*function splitMe(str) {
+  let newArr = str.split(" ");
+  console.log(newArr);
+}
+
+splitMe("I have so much to learn!");*/
+
 /* EXERCISE 4
 
 Write a function called deleteOne which receives a string and a boolean as parameters.
@@ -121,6 +147,20 @@ Write a function called deleteOne which receives a string and a boolean as param
 If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 
 */
+
+/*function deleteOne(str, boolean) {
+  if (boolean === true) {
+    let newArr = str.split(" ");
+    newArr.shift();
+    console.log(newArr.join(" "));
+  } else {
+    let newArr = str.split(" ");
+    newArr.pop();
+    console.log(newArr.join(" "));
+  }
+}
+
+deleteOne("!Please Read this!", false);*/
 
 /* EXERCISE 5
 
@@ -130,17 +170,67 @@ Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
 
 */
 
+/*function onlyLetters(str) {
+  const noNum = str.replace(/[0-9]/g, "");
+  console.log(noNum);
+}
+
+onlyLetters("4 score and 7 years ago");*/
+
+//this method leaves the double space between two words that otherwise would have had a number between them... but I don't know how to solve that.
+
 /* EXERCISE 6
 
 Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 
 */
 
+/*function isThisAnEmail(str) {
+  const regexExp =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
+  console.log(regexExp.test(str));
+}
+
+isThisAnEmail("jaye0888@gmail.com");*/
+
 /* EXERCISE 7
 
 Write a function called whatDayIsIt that should return the current day of the week.
 
 */
+
+/*I am not sure what is being asked here, because I could write a switch function to return a day and that
+seems more simple...so I will do that... but there are so many ways to solve this which become more involved.
+I think that whatever method you'd like for me to practice should be mentioned in the question.
+*/
+
+/*function whatDayIsIt(day) {
+  switch (day) {
+    case 1:
+      console.log("It's Monday");
+      break;
+    case 2:
+      console.log("It's Tuesday");
+      break;
+    case 3:
+      console.log("It's Wednesday");
+      break;
+    case 4:
+      console.log("It's Thursday");
+      break;
+    case 5:
+      console.log("It's Friday");
+      break;
+    case 6:
+      console.log("It's Saturday");
+      break;
+    case 7:
+      console.log("It's Sunday");
+      break;
+  }
+}
+
+whatDayIsIt(7);*/
 
 /* EXERCISE 8
 
@@ -162,11 +252,40 @@ values: [3, 3, 4]
 
 */
 
+/*function rollTheDices(int) {
+  let newArr = [];
+  for (let i = 0; i < int; i++) {
+    newArr.push(dice());
+  }
+  const obj = {
+    sum: 0,
+  };
+  for (let i = 0; i < newArr.length; i++) {
+    obj.sum += newArr[i];
+  }
+  for (const [sum, value] of Object.entries(obj)) {
+    console.log(`${sum}: ${value} `);
+  }
+  console.log(newArr);
+}
+
+rollTheDices(5);*/
+
 /* EXERCISE 9
 
 Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 
 */
+
+function howManyDays(Dt) {
+  const currentDate = Date().toISOString().slice(0, 10);
+  const past = Dt;
+  diff = currentDate.getTime - past.getTime;
+  days = diff / (1000 * 3600 * 24);
+  console.log(days);
+}
+
+howManyDays();
 
 /* EXERCISE 10
 
@@ -185,6 +304,8 @@ Write a function called deleteProp which receives an object and a string as para
 and returns the given object after deleting its property named as the given string.
 
 */
+
+//function deleteProp(object, str){}
 
 /* EXERCISE 12
 
