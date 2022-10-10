@@ -278,20 +278,34 @@ Write a function called howManyDays which receives a date as a parameter and ret
 */
 
 function howManyDays(Dt) {
-  const currentDate = Date().toISOString().slice(0, 10);
-  const past = Dt;
+  const currentDate = new Date(10 / 10 / 2022);
+  const past = Date(Dt);
   diff = currentDate.getTime - past.getTime;
   days = diff / (1000 * 3600 * 24);
   console.log(days);
 }
 
-howManyDays();
+howManyDays(Date(10 / 10 / 2021));
+
+//console.log(Date().toISOString.slice(0, 10));
 
 /* EXERCISE 10
 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
+
+function isTodayMyBirthday() {
+  const myBirthday = Date(08 / 15 / 2022);
+  const today = new Date();
+  if (today === myBirthday) {
+    console.log("Happy Birthday! Today is your day!");
+  } else {
+    console.log("Sorry, today isn't the best day ever.");
+  }
+}
+
+isTodayMyBirthday();
 
 // JS Arrays & Objects
 
